@@ -7,30 +7,39 @@ function fetchData() {
         .then((csvText) => {
             let arrayFromInput = csvText.split('\n');
             let header = arrayFromInput.shift().split(',');
+            let countEvent = 0
+            let rowSort = {};
 
             for (let row of arrayFromInput) {
-                let column = row.split(',');
-                let status = column.shift();
-                let fromDate = column.shift();
-                let toDate = column.shift();
-                let description = column.shift();
-                let typeOfActivity = column.shift();
-                let difficulty = column.shift();
-                let numberOfParticipants = column.pop()
+                countEvent++;
+                rowSort[countEvent] = {};
+                let quotationMarks = row.match(/"([^"]*)"/gm);
+                let reduceWithComma = row.replace(/"([^"]*)"/gm, "").split(',').filter((el) => el.length > 0);
+                console.table(quotationMarks);
+                console.table(reduceWithComma);
 
-                let names = column.join().split('"').filter((name) => name.length > 2);
-                let organizers = names[0];
-                let participants = names[1];
-
-                console.log(status);
-                console.log(fromDate);
-                console.log(toDate);
-                console.log(description);
-                console.log(typeOfActivity);
-                console.log(difficulty);
-                console.log(organizers);
-                console.log(participants);
-                console.log(numberOfParticipants);
+                if (quotationMarks.length < 3) {
+                    rowSort[countEvent]['status'] = reduceWithComma[0];
+                    rowSort[countEvent]['fromDate'] = reduceWithComma[1];
+                    rowSort[countEvent]['toDate'] = reduceWithComma[2];
+                    rowSort[countEvent]['description'] = reduceWithComma[3];
+                    rowSort[countEvent]['typeOfActivity'] = reduceWithComma[4];
+                    rowSort[countEvent]['difficulty'] = reduceWithComma[5];
+                    rowSort[countEvent]['numberOfParticipants'] = reduceWithComma[6].match(/\d+/gm).join();
+                    rowSort[countEvent]['organizers'] = quotationMarks[0];
+                    rowSort[countEvent]['participants'] = quotationMarks[1];
+                } else {
+                    rowSort[countEvent]['status'] = reduceWithComma[0];
+                    rowSort[countEvent]['fromDate'] = reduceWithComma[1];
+                    rowSort[countEvent]['toDate'] = reduceWithComma[2];
+                    rowSort[countEvent]['description'] = quotationMarks[0];
+                    rowSort[countEvent]['typeOfActivity'] = reduceWithComma[3];
+                    rowSort[countEvent]['difficulty'] = reduceWithComma[4];
+                    rowSort[countEvent]['numberOfParticipants'] = reduceWithComma[5].match(/\d+/gm).join();
+                    rowSort[countEvent]['organizers'] = quotationMarks[1];
+                    rowSort[countEvent]['participants'] = reduceWithComma[2];
+                }
+                debugger
             }
         })
         .catch((error) => console.error("Error fetching the CSV data:", error));
