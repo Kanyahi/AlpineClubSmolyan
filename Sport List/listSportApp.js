@@ -9,7 +9,6 @@ function fetchData() {
       let headerRow = {};
       let header = arrayFromInput.shift().split(",");
 
-      let sortedRows = {};
 
       for (let row = 0; row < arrayFromInput.length; row++) {
 
