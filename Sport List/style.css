@@ -2,14 +2,32 @@ p {
     font-family: monospace;
     font-size: 14px;
     text-align: center;    
-    width: 50%;
-    border-radius: 6px;
+    width: 90%;
+    border-radius: 10px;
     background-color: aquamarine;
     text-decoration-color: blue;
-    margin-left: 100px;
+    margin-left: 15px;
 }
 
-#buttonsForEvent {
-    background-color: bisque;
-    width: 400px;
+#visibleInfo {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#status {
+    border: 20px;
+    border-radius: 20px;
+    border-color: rgb(42, 9, 190);
+    background-color: rgb(172, 224, 123);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#headerStyle {
+font-weight: bold;
+font-size: 17px;
 }
