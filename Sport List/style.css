@@ -1,0 +1,15 @@
+p {
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;    
+    width: 50%;
+    border-radius: 6px;
+    background-color: aquamarine;
+    text-decoration-color: blue;
+    margin-left: 100px;
+}
+
+#buttonsForEvent {
+    background-color: bisque;
+    width: 400px;
+}
