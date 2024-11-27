@@ -33,15 +33,14 @@ function fetchData() {
 
       for (let [key, array] of Object.entries(finalList)) {
         let buttonCreate = document.createElement("button");
-        let status = document.createElement("button");
+        let status = document.createElement("p");
+        addToSection.innerHTML = `<p>${header[6]}</p>`;
+        addToSection.innerHTML += `<p id="${key}">${array[6]}</p>`;
         status.textContent = array[0];
         divForBtnEvent.append(status);
         buttonCreate.textContent = key + ". " + array[5];
         divForBtnEvent.append(buttonCreate);
-        
-    
       }
-
     })
     .catch((error) => console.error("Error fetching the data:", error));
 }
