@@ -4,7 +4,7 @@
     text-align: center;    
     width: 90%;
     border-radius: 10px;
-    background-color: aquamarine;
+    background-color: rgb(39, 153, 115);
     text-decoration-color: blue;
     margin-left: 10px;
     padding-left: 6px;
@@ -17,19 +17,23 @@
     width: 300px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-left: 20px;
     text-align: center;
 }
 
 #headPage {
     display: grid;
     width: 350px;
+    background-color: rgba(140, 140, 141, 0.705);
+    border-radius: 30px;
 }
 
 #status {
     border: 20px;
     border-radius: 20px;
     border-color: rgb(42, 9, 190);
-    background-color: rgb(172, 224, 123);
+    background-color: rgba(122, 122, 122, 0.534);
+    color: rgb(255, 255, 255);
     padding-top: 1px;
     padding-bottom: 1px;
     margin-top: 3px;
