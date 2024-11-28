@@ -1,4 +1,4 @@
-p {
+#pStyle {
     font-family: monospace;
     font-size: 14px;
     text-align: center;    
@@ -6,7 +6,11 @@ p {
     border-radius: 10px;
     background-color: aquamarine;
     text-decoration-color: blue;
-    margin-left: 15px;
+    margin-left: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 #visibleInfo {
@@ -14,6 +18,11 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
+}
+
+#headPage {
+    display: grid;
+    width: 350px;
 }
 
 #status {
@@ -30,4 +39,16 @@ p {
 #headerStyle {
 font-weight: bold;
 font-size: 17px;
+}
+
+.buttonEventStyle {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.buttonEventStyleSub {
+    width: 150px;
+    border-radius: 12px;
+    border: 6px;
+    font-weight: bold;
 }
