@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Мероприятия</title>
+    </head>
+    <body>
+        <div id="headPage">
+            <section id="visibleInfo"></section>
+          </div>
+
+        <script>
+fetch(
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vToaWgFh8hBVhDX0SMkym1JTs969uROK_gNPRlnQkHmOLdRszelbnFIH6v8rNKqbMZ_0vZQPT5_AqIN/pub?gid=445090768&single=true&output=csv"
+    )
+      .then((response) => response.text())
+      .then((csvText) => {
+        const arrayFromInput = csvText.split("\n").reverse();
+        const header = arrayFromInput.pop().split(",");
+  
+        const finalList = {};
+  
+        for (let row = 0; row < arrayFromInput.length; row++) {
+          let quotationMarks = arrayFromInput[row].match(/"([^"]*)"/gm);
+  
+          let eventRow = arrayFromInput[row]
+            .replace(/"([^"]*)"/gm, "")
+            .split(",");
+  
+          while (true) {
+            const indexEmpty = eventRow.indexOf("");
+            if (quotationMarks === null) break;
+            if (indexEmpty !== -1 && quotationMarks.length !== 0) {
+              eventRow.splice(indexEmpty, 1, quotationMarks.shift());
+            } else {
+              break;
+            }
+          }
+          finalList[row + 1] = eventRow;
+        }
+  
+        const headPageDiv = document.getElementById("headPage");
+        const addToSection = document.getElementById("visibleInfo");
+  
+        for (let [key, array] of Object.entries(finalList)) {
+          const colorList = {
+            "Изпълнено": "#21C93D",
+            "Планувано": "#ecec10",
+            "Отменено": "#0BF2EF",
+            "Организиране": "#0BF2AC",
+            "Отложено": "#A6F111",
+            "Няма места": "#fd6161",
+          };
+  
+          const reg = /[А-Яа-я\s]+/gm;
+          const checkEventStatus = array[0].match(reg).join().trim();
+  
+          const color = colorList[checkEventStatus];
+  
+          const status =
+            `<button onclick="showOrHide(${key})" class="buttonEventStyle">📢 ${array[5]}
+              <button class="buttonEventStyleSub" style="background-color:${color}">${array[0]}</button>
+              </button>` +
+            `
+          <section id="${key}sub" style="display: none">
+          <div id="status">
+          <p id="headerStyle">${header[1]} ⇒ ${array[1]}</p>
+          <p id="headerStyle">${header[2]} ⇒ ${array[2]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[3]} ⇙</p><p id="pStyle">${array[3]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[4]} ⇙</p><p id="pStyle">${array[4]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[5]} ⇙</p>\n<p id="pStyle">${array[5]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[6]} ⇙</p>\n<p id="pStyle">${array[6]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[7]} ⇙</p>\n<p id="pStyle">${array[7]}</p>
+          </div>
+          <div id="status">
+          <p id="headerStyle">${header[8]} ⇒ ${array[8]}</p> 
+          </div> 
+          <p>👆👆👆</p
+          </section>
+          `;
+          addToSection.innerHTML += status;
+        }
+      })
+      .catch((error) => console.error("Error fetching the data:", error));
+  
+  
+  function showOrHide(value) {
+    const sectionID = `${value}sub`;
+    const thisSection = document.getElementById(sectionID).style.display;
+  
+    if (thisSection === "none") {
+      document.getElementById(sectionID).style.display = "block";
+    } else {
+      document.getElementById(sectionID).style.display = "none";
+    }
+}
+        </script>
+
+        <style>
+ #pStyle {
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;    
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgb(39, 153, 115);
+    text-decoration-color: blue;
+       margin-bottom: 10px;
+    margin-left: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+#visibleInfo {
+    width: 310px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  margin-left: 36px;
+    text-align: center;
+  	display: grid;
+}
+
+#headPage {
+    display: grid;
+    width: 400px;
+    background-color: rgba(140, 140, 141, 0.705);
+    border-radius: 30px;
+}
+
+#status {
+    border: 20px;
+    border-radius: 20px;
+    border-color: rgb(42, 9, 190);
+    background-color: rgba(122, 122, 122, 0.534);
+color: rgb(255, 255, 255);
+  padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#headerStyle {
+font-weight: bold;
+font-size: 17px;
+  padding: 6px;
+}
+
+.buttonEventStyle {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.buttonEventStyleSub {
+    width: 150px;
+    border-radius: 12px;
+    border: 6px;
+    font-weight: bold;
+}
+
+        </style>
+    </body>
+</html>
