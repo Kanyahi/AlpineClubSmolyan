@@ -17,15 +17,16 @@
     width: 300px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 20px;
     text-align: center;
+    display: grid;
 }
 
 #headPage {
     display: grid;
-    width: 350px;
+    width: 400px;
     background-color: rgba(140, 140, 141, 0.705);
     border-radius: 30px;
+    justify-items: center;
 }
 
 #status {
@@ -43,6 +44,7 @@
 #headerStyle {
 font-weight: bold;
 font-size: 17px;
+padding: 6px;
 }
 
 .buttonEventStyle {
