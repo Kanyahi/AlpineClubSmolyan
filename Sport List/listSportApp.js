@@ -74,7 +74,7 @@ function fetchData() {
           <div id="status">
           <p id="headerStyle">${header[8]} ⇒ ${array[8]}</p> 
           </div> 
-          <p>👆👆👆</p
+          <p>👆👆👆</p>
           </section>
           `;
           addToSection.innerHTML += status;
