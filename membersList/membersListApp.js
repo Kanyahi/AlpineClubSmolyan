@@ -7,7 +7,7 @@ function getMemberList() {
       const arrayFromInput = csvText.split("\n");
       const header = arrayFromInput.shift().split(",");
 
-      const finalList = {};
+      const finalList = [];
       const printDiv = document.getElementById('listPrint');
 
       for (let row = 0; row < arrayFromInput.length; row++) {
@@ -15,19 +15,18 @@ function getMemberList() {
         let eventRow = arrayFromInput[row].split(",");
         eventRow.shift();
 
-        
-
-        finalList[row + 1] = eventRow;
+        finalList.push(eventRow.join());
+        finalList.sort((a, b) => a.localeCompare(b));
       }
 
-      for(let [number,name] of Object.entries(finalList)){
+      for (let x = 0; x < finalList.length; x++) {
+        let name = finalList[x];
         let printInput = `
-        <button id="number">${number}</button>
+        <button id="number">${x + 1}</button>
         <button id="nameMember">${name}</button>
         `
         printDiv.innerHTML += printInput;
       }
-      debugger;
     });
 }
 getMemberList();
