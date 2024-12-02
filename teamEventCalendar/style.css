@@ -1,0 +1,60 @@
+#pStyle {
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;    
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgb(39, 153, 115);
+    text-decoration-color: blue;
+    margin-left: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+#visibleInfo {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: grid;
+}
+
+#headPage {
+    display: grid;
+    width: 400px;
+    background-color: rgba(140, 140, 141, 0.705);
+    border-radius: 30px;
+    justify-items: center;
+}
+
+#status {
+    border: 20px;
+    border-radius: 20px;
+    border-color: rgb(42, 9, 190);
+    background-color: rgba(122, 122, 122, 0.534);
+    color: rgb(255, 255, 255);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#headerStyle {
+font-weight: bold;
+font-size: 17px;
+padding: 6px;
+}
+
+.buttonEventStyle {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.buttonEventStyleSub {
+    width: 150px;
+    border-radius: 12px;
+    border: 6px;
+    font-weight: bold;
+}
