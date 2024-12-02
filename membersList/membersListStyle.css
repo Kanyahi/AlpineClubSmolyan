@@ -1,0 +1,34 @@
+#listPrint {
+    background-color: dimgray;
+    border-radius: 60px;
+    display: grid;
+    width: 400px;
+    height: 100%;
+    justify-content: center;
+}
+
+#number {
+    color: rgb(8, 4, 133);
+    background-color: rgba(253, 243, 42, 0.889);
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+#nameMember {
+width: 380px;
+border-radius: 30px;
+font-size: 16px;
+font-family: monospace;
+margin-bottom: 10px;}
+
+#tableStyle {
+    padding-left: 10px;
+    color: aliceblue;
+    text-decoration: dotted;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 15px;
+}
