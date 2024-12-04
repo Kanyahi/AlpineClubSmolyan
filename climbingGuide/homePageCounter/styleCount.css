@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+  .counterup {
+    width: 150px;
+    border-radius: 60px;
+    transition: 0.5s;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px dotted #54ea22;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .counterup h2 {
+    font-size: 25px;
+  }
+  .counterup h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  
