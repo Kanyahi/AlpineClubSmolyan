@@ -1,0 +1,113 @@
+
+   html{
+       width: 100vw;
+       height: 100vh;
+   }
+   
+   /* CSS which you need for blurred box */
+   body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+     font-weight: 400;
+    -webkit-font-smoothing: antialiased; 
+   }
+   
+   .blurred-box{
+     position: relative;
+     width: 250px;
+     height: 350px;
+     top: calc(50% - 175px);
+     left: calc(50% - 125px);
+     background: inherit;
+     background-color: rgb(21, 132, 196);
+     border-radius: 75px;
+     overflow: hidden;
+   }
+   
+   .blurred-box:after{
+    content: '';
+    width: 300px;
+    height: 300px;
+    background: inherit; 
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;  
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(171, 209, 4, 0.418);
+    filter: blur(39px);
+   }
+   
+   
+   /* Form which you dont need */
+   .user-login-box{
+     position: relative;
+     margin-top: 50px;
+     text-align: center;
+     z-index: 1;
+   }
+   .user-login-box > *{
+     display: inline-block;
+     width: 200px;
+   }
+   
+   .user-icon{
+     width: 100px;
+     height: 100px;
+     position: relative;
+     border-radius: 40%;
+     background-size: auto;
+     padding-bottom: 10px;
+     padding-left: 1px;
+     background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9prHwJKMnKXCNjpeiVTyK5JxLRH4ik3ofRyZJ25eXOP5oR7ZLxm8b9pAi3dGGsDJRYdddlgR9bj204mrL9iMiMRnPoFV-yutJvn9ARKr1d9ET-qU2ht0eU1ZpSLxf81uzYrA4qzCRLNGmyKrLsoLJnngBVxy9SNe2Hc074TfJI5gRklEgGhb-vHhaorw/s1600/hristo-hristov-rear100.png);
+   }
+   
+   .user-name{
+     margin-top: 15px;
+     margin-bottom: 15px;
+     color: white;
+   }
+   
+   input.user-password{
+     width: 160px;
+     height: 21px;
+     opacity: 0.4;
+     border-radius: 2px;
+     padding: 5px 15px;
+     border: 0;
+   }
+   
+   .loginBtn{
+	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+	background-color:#bddbfa;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	padding:6px 24px; 
+    margin-top: 5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.loginBtn:hover {
+	background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+	background-color:#80b5ea;
+}
+.loginBtn:active {
+	position:relative;
+	top:1px;
+}
+
+   
