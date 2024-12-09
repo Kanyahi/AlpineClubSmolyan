@@ -17,7 +17,7 @@ function loginAccess() {
       const arrayFromInput = csvText.split("\n");
       arrayFromInput.shift().split(",");
 
-      let inputID = document.getElementById("yourID").value.toLocaleLowerCase();
+      let inputID = document.getElementById("yourID").value.toLocaleLowerCase().trimEnd();
       let statusBox = document.getElementById("printStatus");
      
       let arrayName = Boolean;
@@ -34,10 +34,10 @@ function loginAccess() {
         }
       }
       
-
       if (arrayName) {
         document.getElementById("yourID").value = "";
         document.getElementById("loginBox").style.display = "none";
+        sessionStorage.setItem("check", "access");
         return (location.href = "/p/blog-page_42.html");
       } else {
         statusBox.textContent += "Incorrect ID";
