@@ -51,12 +51,3 @@ function eventProjectFetchData() {
     });
 }
 eventProjectFetchData();
-
-`<li>
-    <input type="checkbox" checked>
-    <i></i>
-    <h2>${eventYear} година</h2>
-    <p>${description}</p>
-    <p>${workers}</p>
-    <p>${daysWork}</p>
-  </li>`
