@@ -46,7 +46,6 @@ function eventProjectFetchData() {
             finalList[year] = {[count]: eventInfo};
         }
       }
-      const sectionToAddEvent = document.getElementById('addSection');
       
       debugger
     });
