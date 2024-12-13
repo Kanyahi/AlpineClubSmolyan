@@ -6,7 +6,7 @@ function eventProjectFetchData() {
     .then((csvText) => {
       const arrayFromInput = csvText.split("\n").reverse();
       arrayFromInput.pop();
-      const finalList = {};
+      let sortedArrayEvent = [];
 
       for (let row = 0; row < arrayFromInput.length; row++) {
         let cutSpace = arrayFromInput[row].trim();
@@ -26,28 +26,47 @@ function eventProjectFetchData() {
             break;
           }
         }
+        sortedArrayEvent.push(eventRow);
+      }
+      const boxToAddInfo = document.getElementById("timelineBox");
+      let currentYear = '';
+      let countevent = 1;
 
-        let year = eventRow.shift();
-        let sizeFinalList = Object.keys(finalList).length;
-      
-        let eventInfo = {description: eventRow[0],
-          workers: eventRow[1],
-          days: eventRow[2],
-        }
-        
-        let count = 1;
-        if (sizeFinalList !== 0) {
-          if(finalList[year]){
-              finalList[year][count+1] = eventInfo;
-          } else {
-              finalList[year] = {[count]: eventInfo};
-          }
+      for (let check of sortedArrayEvent) {
+        if (currentYear === check[0]) {
+          countevent++;
+          boxToAddInfo.innerHTML += `<div class="entry">
+    <div class="title">
+      <p>№ ${countevent}</p>
+    </div>
+    <div class="body">
+      <p>Описание:</p>
+              <p>${check[1]}</p>
+              <p>Участници:</p>
+              <p>${check[2]}</p>
+              <p>Работни дни:</p>
+              <p>${check[3]}</p>
+    </div>
+  </div>`;
         } else {
-            finalList[year] = {[count]: eventInfo};
+          currentYear = check[0];
+          countevent = 1;
+          boxToAddInfo.innerHTML += `<div class="entry">
+            <div class="title">
+            <h3>${currentYear} година</h3>
+              <p>№ ${countevent}</p>
+            </div>
+            <div class="body">
+              <p>Описание:</p>
+              <p>${check[1]}</p>
+              <p>Участници:</p>
+              <p>${check[2]}</p>
+              <p>Работни дни:</p>
+              <p>${check[3]}</p>
+            </div>
+          </div>`;
         }
       }
-      
-      debugger
     });
 }
 eventProjectFetchData();
