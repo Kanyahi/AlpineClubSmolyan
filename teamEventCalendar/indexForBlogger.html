@@ -28,15 +28,15 @@ fetch(
             .replace(/"([^"]*)"/gm, "")
             .split(",");
   
-          while (true) {
-            const indexEmpty = eventRow.indexOf("");
-            if (quotationMarks === null) break;
-            if (indexEmpty !== -1 && quotationMarks.length !== 0) {
-              eventRow.splice(indexEmpty, 1, quotationMarks.shift());
-            } else {
-              break;
+            for (let x = 0; x < eventRow.length; x++) {
+          let indexEmpty = eventRow[x] === "" ? true : false;
+          if (quotationMarks === null || quotationMarks.length === 0) break;
+          if (indexEmpty === true && quotationMarks.length !== 0) {
+            if (x > 2) {
+              eventRow.splice(x, 1, quotationMarks.shift());
             }
           }
+        }
           finalList[row + 1] = eventRow;
         }
   
