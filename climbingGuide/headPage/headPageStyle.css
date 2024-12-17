@@ -140,3 +140,8 @@
   border-radius: 10px;
   animation: pulse 2s infinite;
 }
+
+
+li::marker{
+content: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHCpSyyhZRrL1RPawzK0aqqjUAlKU-1zhPkDl40AuZ_ad1fDQ0URCzPBJHaJyb53A3mXJ0y5JGpIjjscs2e9MLxi6I2eGaigNn3cWr2RK_u5_I_ce06zLYbOpeTcypQ7H-mJu4hJ0PBqRf_Xc1yQ-4rF3vewAh2qRoyqVRSEuUbUWrA7naqvjdM-coauX/s32/bouldering.png");
+}
