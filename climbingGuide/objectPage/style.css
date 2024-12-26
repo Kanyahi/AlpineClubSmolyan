@@ -1,0 +1,404 @@
+* {
+  box-sizing: border-box;
+}
+
+html.open,
+body.open {
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.6;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+}
+
+p {
+  text-align: center;
+  margin: 20px 0 60px;
+}
+
+main {
+  background-color: #565b62;
+  border-radius: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+}
+
+table {
+  display: block;
+}
+
+tr,
+td,
+tbody,
+tfoot {
+  display: block;
+}
+
+thead {
+  display: none;
+}
+
+tr {
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 10px 10px 0;
+  text-align: center;
+  padding-left: 9px;
+}
+td:before {
+  content: attr(data-title);
+  color: #7a91aa;
+  font-size: 1.4rem;
+  padding-right: 10px;
+  display: inline;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: center;
+  font-weight: 700;
+}
+
+thead th {
+  color: #fff;
+  border: 1px solid #2d89b8;
+  border-radius: 20px;
+}
+
+tfoot th {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #b8c4d2;
+}
+
+.button {
+  line-height: 1;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  background-color: #4b908f;
+  cursor: pointer;
+}
+
+.select {
+  padding-bottom: 56px;
+  border-bottom: 1px solid #28333f;
+}
+.select:before {
+  display: none;
+}
+
+.detail {
+  background-color: #3a4f59f8;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.detail.open {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  z-index: 100;
+}
+
+.detail-container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 500px;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+dd {
+  margin: 0 0 40px 0;
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f5f828;
+  box-shadow: 0 1px 0 #da9708;
+  line-height: 1;
+}
+
+.close {
+  background: #424c57;
+  padding: 11px;
+  color: #fff;
+  font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  line-height: 1;
+  font-size: 1.8rem;
+  position: fixed;
+  right: 241px;
+  top: 35px;
+  -moz-transition: border 0.3s linear;
+  -o-transition: border 0.3s linear;
+  -webkit-transition: border 0.3s linear;
+  transition: border 0.3s linear;
+  cursor: pointer;
+}
+.close:hover, .close:focus {
+  background-color: #217508;
+  border: 1px solid #0fc5f3;
+}
+
+@media (min-width: 460px) {
+  td {
+    text-align: left;
+  }
+
+  td:before {
+    display: inline-block;
+    text-align: right;
+    width: 140px;
+  }
+
+  .select {
+    padding-left: 160px;
+  }
+}
+  .button {
+  line-height: 1;
+  width: 100%;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  background-color: #4b908f;
+  cursor: pointer;
+}
+@media (min-width: 720px) {
+  table {
+    display: table;
+  }
+
+  tr {
+    display: table-row;
+  }
+
+  td,
+  th {
+    display: table-cell;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  td {
+    border: 1px solid #28333f;
+  }
+  td:before {
+    display: none;
+  }
+
+  td,
+  th {
+    padding: 10px;
+  }
+
+  tr:nth-child(2n + 2) td {
+    background-color: #3f658f;
+  }
+
+  .select {
+    padding: 10px;
+  }
+}
+
+  .showOrNot {
+  display: none;
+}
+
+.btnBox {
+  display: grid;
+  text-align: center;
+}
+  
+  #closeSector{
+  position: relative;
+  top: 0;
+  left: 20;
+  display: none;
+  background-color: rgb(230, 230, 230);
+  color: #004ec2;
+  font-family: serif;
+  font-size: 13px;
+  height: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding-bottom: 25px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 1px double;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.container{
+  position: relative;
+  padding: 10px;
+}
+
+.container .card{
+  font-family: cursive;
+  position: relative;
+  width: 300px;
+  height: 170px;
+  background: #676c6dfa;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before{
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #1cab34;
+  clip-path: circle(127px at 10% 20%);
+  transition: 0.5s ease-in-out;
+}
+.container .card:hover:before{
+  clip-path: circle(300px at 80% -20%);
+}
+
+.container .card:after{
+  content: url('');
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  font-size: 15px;
+  font-weight: 200;
+  font-style: italic;
+  color: rgba(255,255,25,0.05)
+}
+
+
+.container .card .contentBx{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 20000;
+}
+
+.container .card:hover .contentBx{
+  height: 170px;
+}
+
+.container .card .contentBx h2{
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0;
+}
+
+.container .card .contentBx .size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card:hover .contentBx .size{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card .contentBx .size h3{
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.container .card .contentBx a{
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  margin-top: 0;
+}
+
+.container .card:hover .contentBx a{
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+  
+}
