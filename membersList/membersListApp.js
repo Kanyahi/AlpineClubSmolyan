@@ -19,13 +19,18 @@ function getMemberList() {
         finalList.sort((a, b) => a.localeCompare(b));
       }
 
+      let countMembers = 0;
       for (let x = 0; x < finalList.length; x++) {
         let name = finalList[x];
-        let printInput = `
-        <button id="number">${x + 1}</button>
+
+        if(name !== ""){
+          countMembers++;
+          let printInput = `
+        <button id="number">${countMembers}</button>
         <button id="nameMember">${name}</button>
         `
         printDiv.innerHTML += printInput;
+        }
       }
     });
 }
