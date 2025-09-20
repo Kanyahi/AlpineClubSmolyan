@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "https://raw.githubusercontent.com/Kanyahi/AlpineClubSmolyan/refs/heads/main/PWA/picture/hristo-hristovtransparent%20512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
