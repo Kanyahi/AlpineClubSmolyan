@@ -8,12 +8,12 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/Kanyahi/AlpineClubSmolyan/refs/heads/main/PWA/picture/hristo-hristovtransparent%20512.png",
+      "src": "https://raw.githubusercontent.com/Kanyahi/AlpineClubSmolyan/refs/heads/main/PWA/picture/hristo-hristov-rear-transparent.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://raw.githubusercontent.com/Kanyahi/AlpineClubSmolyan/refs/heads/main/PWA/picture/hristo-hristovtransparent%20512.png",
+      "src": "https://raw.githubusercontent.com/Kanyahi/AlpineClubSmolyan/refs/heads/main/PWA/picture/hristo-hristov-rear-transparent.png",
       "sizes": "512x512",
       "type": "image/png"
     }
