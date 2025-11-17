@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Спортно Катерене – Смолян</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #222;
+        }
+        .content {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            height: 100px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 30px auto;
+            padding: 12px 30px;
+            background: #1b5e20;
+            color: white;
+            font-size: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 3px solid #81c784;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+        .cta:hover {
+            background: #2e7d32;
+            transform: translateY(-3px);
+        }
+        .cta::before {
+            content: "🧗";
+            font-size: 22px;
+        }
+        @media (max-width: 600px) {
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 8px;
+            }
+            .gallery img {
+                height: 80px;
+            }
+            .cta {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    
+        .portfolio {
+            border-left: 6px solid #1b5e20;
+            padding-left: 30px;
+        }
+        .portfolio h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .portfolio .section-title {
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 3px solid #1b5e20;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .highlights {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .highlight-box {
+            flex: 1 1 250px;
+            background: #eef6ee;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #1b5e20;
+        }
+        @media(max-width:600px){
+            .portfolio { padding-left: 15px; }
+            .highlight-box { flex:1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="content portfolio">
+        <h2>Изкачи се по-високо – Катерене в Смолян</h2>
+        
+
+        <div class="section-title">Защо Смолян?</div>
+        <div class="highlights">
+            <div class="highlight-box">Уникални скални обекти в Родопа Планина</div>
+            <div class="highlight-box">Силна местна общност и традиции</div>
+            <div class="highlight-box">Подходящо за начинаещи и напреднали</div>
+        </div>
+
+        
+
+        <p>
+            Катеренето в Смолян е повече от спорт – то е вдъхновение, свобода и път към личностно развитие.
+            Великият релеф на Родопа Планина предоставя едни от най-красивите и подходящи условия за катерене в страната.
+            Тук се намира и един от най-големите алпийски клубове в България, който развива млади таланти, организира обучения
+            и събира хора, за които движението нагоре е начин на живот.
+        </p>
+
+        <h3>Галерия</h3>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400" alt="Climbing 1">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400" alt="Climbing 2">
+            <img src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?w=400" alt="Climbing 3">
+            <img src="https://images.unsplash.com/photo-1521198022873-af0c09a761f0?w=400" alt="Climbing 4">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=400" alt="Climbing 5">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Climbing 6">
+            <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=400" alt="Climbing 7">
+            <img src="https://images.unsplash.com/photo-1500042543971-01d3a03f7be0?w=400" alt="Climbing 8">
+            <img src="https://images.unsplash.com/photo-1526481280695-3c720685208b?w=400" alt="Climbing 9">
+        </div>
+
+        <a class="cta" href="https://example.com" target="_blank">Към сайта на клуба</a>
+    </div>
+</body>
+</html>
